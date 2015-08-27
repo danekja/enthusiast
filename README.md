@@ -2,7 +2,35 @@
 
 The Enthusiast project is supposed to be a simple application for Barcamp organization.
 
-At the same time it serves as a learning project for Dart language and polymer.dart. 
+At the same time it serves as a learning project for Dart language and polymer.dart.
+ 
+## How-To Install & Run
+The following instructions presume you have [Dart SDK](https://www.dartlang.org/downloads/) installed on your ```PATH```.
+Also you need a running MongoDb instance.
+
+1. Clone the repository and download dependencies:
+
+        git clone git@github.com:danekja/enthusiast.git
+        cd enthusiast
+        pub get
+2. Modify ```bin/enthusiast.dart``` with your MongoDb connection information.
+3. Start the server ```dart bin/enthusiast.dar```
+4. Go to the [browser](http://localhost:8080/)
+
+See the following section for list of implemented functionality and its URLs.
+
+## URL List
+This section contains brief overview of the application's routing.
+
+### Server routes
+Web service API overview.
+
+* /login - user sign-in
+* /logout - sign-out
+* /users - User entity endpoint.
+    * GET for listing all users
+    * POST for new user registration
+    * PUT /:id for user update
 
 ## Licensing
 
