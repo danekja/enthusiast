@@ -9,9 +9,9 @@
 library enthusiast.model.user;
 
 import 'package:redstone_mapper/mapper.dart';
-import 'package:enthusiast/types/types.dart';
+import 'package:enthusiast/generic/types/types.dart';
 import 'package:redstone_mapper_mongo/metadata.dart';
-import 'package:enthusiast/auth/authentication.dart';
+import 'package:enthusiast/generic/auth/authentication.dart';
 
 ///Entity representing application's user.
 class User extends Schema implements UserDetails {

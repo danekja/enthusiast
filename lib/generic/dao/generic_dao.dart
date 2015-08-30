@@ -7,7 +7,7 @@
  */
 
 ///Library with generic dao classes.
-library common_data.dao;
+library common.dao;
 
 import 'package:redstone_mapper_mongo/service.dart';
 import 'package:redstone_mapper_mongo/manager.dart';

@@ -14,9 +14,9 @@ import 'package:enthusiast/server/src/dao/user_dao.dart';
 import 'package:redstone/server.dart' as app;
 import 'dart:async';
 import 'package:redstone_mapper/plugin.dart';
-import 'package:enthusiast/auth/authentication.dart' as auth;
+import 'package:enthusiast/generic/auth/authentication.dart' as auth;
 import 'package:redstone/query_map.dart';
-import 'package:enthusiast/auth/authorization.dart' as sec;
+import 'package:enthusiast/generic/auth/authorization.dart' as sec;
 
 /*################### CONSTANTS ##########################*/
 

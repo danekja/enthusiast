@@ -9,9 +9,9 @@
 library enthusiast.dao.user;
 
 import 'package:enthusiast/common/model/user.dart';
-import 'package:enthusiast/common_data/generic_dao.dart';
+import 'package:enthusiast/generic/dao/generic_dao.dart';
 import 'dart:async';
-import 'package:enthusiast/auth/authentication.dart' as auth;
+import 'package:enthusiast/generic/auth/authentication.dart' as auth;
 
 /// Interface specification for User entity DAO.
 abstract class UserDao extends GenericDao<User, String> {

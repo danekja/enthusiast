@@ -6,7 +6,7 @@
  *   http://creativecommons.org/licenses/by-nc-sa/4.0/.
  */
 
-library common_types;
+library common.types;
 import 'package:redstone_mapper/mapper.dart';
 
 /// Redstone validation rule for emails.

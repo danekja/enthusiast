@@ -12,7 +12,7 @@
 library authorization;
 
 import 'package:redstone/server.dart' as app;
-import 'package:enthusiast/auth/authentication.dart' as auth;
+import 'package:enthusiast/generic/auth/authentication.dart' as auth;
 
 ///Annotation for securing routes. Takes role name as argument.
 class Secure {

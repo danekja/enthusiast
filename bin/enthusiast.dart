@@ -18,7 +18,7 @@ import 'package:redstone_mapper_mongo/manager.dart' as mongo;
 import 'package:redstone/server.dart' as app;
 import 'package:di/src/module.dart';
 import 'package:enthusiast/server/src/dao/user_dao.dart';
-import 'package:enthusiast/auth/authentication.dart' as auth;
+import 'package:enthusiast/generic/auth/authentication.dart' as auth;
 
 var _userDao = new UserDaoMongo();
 
