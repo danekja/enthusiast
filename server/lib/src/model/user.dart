@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2015. Jakub Danek
+ * Copyright (c) 2016. Jakub Danek
  *
  * This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
  *  To view a copy of this license, visit
@@ -9,12 +9,11 @@
 library enthusiast.model.user;
 
 import 'package:redstone_mapper/mapper.dart';
-import 'package:enthusiast/generic/types/types.dart';
+import 'package:darthusiast/types/types.dart';
 import 'package:redstone_mapper_mongo/metadata.dart';
-import 'package:enthusiast/generic/auth/authentication.dart';
 
 ///Entity representing application's user.
-class User extends Schema implements UserDetails {
+class User extends Schema {
 
   ///Primary key
   @Id()
@@ -50,16 +49,5 @@ class User extends Schema implements UserDetails {
 
   /// Constructor for initialization of User object from JSON document.
   User.fromJson(Map map) : this.full(map["id"], map['email'], map['name'],map['password']);
-
-  /// Implementation of UserDetails' method.
-  Set<String> getRoles() {
-    return roles;
-  }
-
-  /// Implementation of UserDetails' method.
-  String getUserDescription() {
-    return name;
-  }
-
 
 }

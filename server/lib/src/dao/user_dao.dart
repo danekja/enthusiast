@@ -8,10 +8,9 @@
 
 library enthusiast.dao.user;
 
-import 'package:enthusiast/common/model/user.dart';
-import 'package:enthusiast/generic/dao/generic_dao.dart';
+import 'package:enthusiast-server/src/model/user.dart';
+import 'package:darthusiast/dao/generic_dao.dart';
 import 'dart:async';
-import 'package:enthusiast/generic/auth/authentication.dart' as auth;
 
 /// Interface specification for User entity DAO.
 abstract class UserDao extends GenericDao<User, String> {
@@ -21,7 +20,7 @@ abstract class UserDao extends GenericDao<User, String> {
 }
 
 /// MongoDb implementation of the UserDao and UserProvider interfaces.
-class UserDaoMongo extends GenericDaoMongo<User, String> implements UserDao, auth.UserProvider {
+class UserDaoMongo extends GenericDaoMongo<User, String> implements UserDao {
 
   UserDaoMongo():super("users") {}
 
@@ -29,10 +28,5 @@ class UserDaoMongo extends GenericDaoMongo<User, String> implements UserDao, aut
   Future<User> findByUsername(String username) {
     return super.findOne({"username" : username});
   }
-
-  Future<auth.UserDetails> findUser(String username, String password) {
-    return super.findOne({"username" : username, "password" : password});
-  }
-
 
 }

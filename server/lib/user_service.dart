@@ -9,14 +9,12 @@
 /// Web service for actions related to User and authentication.
 library enthusiast.service.user;
 
-import 'package:enthusiast/common/model/user.dart';
-import 'package:enthusiast/server/src/dao/user_dao.dart';
+import 'package:enthusiast-server/src/model/user.dart';
+import 'package:enthusiast-server/src/dao/user_dao.dart';
 import 'package:redstone/server.dart' as app;
 import 'dart:async';
 import 'package:redstone_mapper/plugin.dart';
-import 'package:enthusiast/generic/auth/authentication.dart' as auth;
 import 'package:redstone/query_map.dart';
-import 'package:enthusiast/generic/auth/authorization.dart' as sec;
 
 /*################### CONSTANTS ##########################*/
 
@@ -68,7 +66,7 @@ class UserService {
       throw new UserAlreadyExistsError("Username already taken");
     }
 
-    user.password = auth.encodePassword(user.password);
+    //TODO encode password
 
     return _userDao.save(user);
   }
@@ -102,26 +100,8 @@ class UserService {
   /// Returns list of all user's registered in the application.
   @app.DefaultRoute(methods: const [app.GET])
   @Encode()
-  @sec.Secure(Roles.ADMIN)
   Future<List<User>> listUsers() {
     return _userDao.findAll();
   }
 
-}
-
-/// Attempts user authentication based on given credentials.
-///
-/// Returns true on success, false otherwise.
-@app.Route("login", methods: const [app.POST])
-Future<bool> login(@app.Inject() auth.UserProvider provider, @app.Body(app.JSON) QueryMap body) async {
-  var res = await auth.authorize(provider, body.username, body.password);
-
-  return res.success;
-}
-
-
-/// Logs out the current user.
-@app.Route("logout", methods: const [app.GET])
-void logout() {
-  auth.logout();
 }
