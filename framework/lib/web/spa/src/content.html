@@ -1,0 +1,23 @@
+<!--
+  ~ Copyright (c) 2015. Jakub Danek
+  ~
+  ~ This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
+  ~  To view a copy of this license, visit
+  ~   http://creativecommons.org/licenses/by-nc-sa/4.0/.
+  -->
+
+<link rel="import" href="../../../../../packages/polymer_elements/iron_pages.html"/>
+<link rel="import" href="../../../../../packages/polymer_elements/paper_material.html"/>
+
+<dom-module id="spa-content">
+    <template>
+        <iron-pages id="spaContent" attr-for-selected="id" selected="{{selected}}">
+            <template is="dom-repeat" items="[[pages]]">
+                <section id$="[[item.path]]">
+                    <h2 class="paper-font-display2">[[item.name]]</h2>
+
+                </section>
+            </template>
+        </iron-pages>
+    </template>
+</dom-module>

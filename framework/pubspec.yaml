@@ -8,19 +8,6 @@ environment:
   sdk: '>=1.0.0 <2.0.0'
 
 dependencies:
-  browser: '>=0.10.0 <0.11.0'
-  mongo_dart: any
-  paper_elements: '>=0.7.0 <0.8.0'
-  polymer: '>=0.16.0 <0.17.0'
-  redstone: any
-  redstone_mapper: any
-  redstone_mapper_mongo: any
-  shelf_static: any
-
-
-
-transformers:
-#order matters here!
-- redstone_mapper
-- polymer:
-    entry_points: web/index.html
+  polymer: '1.0.0-rc.15'
+  redstone_mapper_mongo:
+    git: https://github.com/redstone-dart/redstone_mapper_mongo.git

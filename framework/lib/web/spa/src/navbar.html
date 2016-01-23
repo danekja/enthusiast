@@ -1,0 +1,26 @@
+<!--
+  ~ Copyright (c) 2016. Jakub Danek
+  ~
+  ~ This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
+  ~  To view a copy of this license, visit
+  ~   http://creativecommons.org/licenses/by-nc-sa/4.0/.
+  -->
+
+<link rel="import" href="../../../../../packages/polymer_elements/iron_icon.html"/>
+<link rel="import" href="../../../../../packages/polymer_elements/paper_menu.html"/>
+<link rel="import" href="../../../../../packages/polymer_elements/paper_item.html"/>
+<link rel="import" href="../../../../../packages/polymer_elements/paper_ripple.html"/>
+
+<dom-module id="spa-navbar">
+    <template>
+        <paper-menu attr-for-selected="data-route" selected="{{selected}}">
+            <template is="dom-repeat" items="[[pages]]">
+                <paper-item data-route$="[[item.path]]">
+                    <paper-ripple></paper-ripple>
+                    <iron-icon icon="[[item.icon]]"></iron-icon>
+                    <paper-item-body>[[item.name]]</paper-item-body>
+                </paper-item>
+            </template>
+        </paper-menu>
+    </template>
+</dom-module>
