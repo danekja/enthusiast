@@ -1,4 +1,4 @@
-name: 'enthusiast-polymer'
+name: 'enthusiast_polymer'
 version: 0.0.1
 description: A web app built using polymer.dart.
 author: Jakub Danek <danek.ja@gmail.com>
@@ -10,18 +10,17 @@ environment:
 dependencies:
   darthusiast:
     path: ../framework
-    version: any
   browser: '>=0.10.0 <0.11.0'
-  paper_elements: '>=0.7.0 <0.8.0'
-  polymer: '>=0.16.0 <0.17.0'
-  redstone: any
-  redstone_mapper: any
+  polymer: '1.0.0-rc.15'
+  polymer_elements: '1.0.0-rc.8'
+  redstone_mapper:
+    git: https://github.com/redstone-dart/redstone_mapper.git
   shelf_static: any
 
 
 
 transformers:
 #order matters here!
-- redstone_mapper
+#- redstone_mapper
 - polymer:
     entry_points: web/index.html

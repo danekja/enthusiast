@@ -1,0 +1,24 @@
+<!--
+  ~ Copyright (c) 2016. Jakub Danek
+  ~
+  ~ This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
+  ~  To view a copy of this license, visit
+  ~   http://creativecommons.org/licenses/by-nc-sa/4.0/.
+  -->
+
+<link rel="import" href="../../../../../packages/polymer_elements/paper_card.html"/>
+<link rel="import" href="../../../../../packages/polymer_elements/paper_button.html"/>
+
+<dom-module id="event-card" attributes="event, joinevent, detailsevent">
+    <link rel="import" href="../../themes/technology/technology.css" type="css"/>
+
+    <template>
+        <paper-card heading="[[event.name]]">
+            <div class="card-content">[[event.description]]</div>
+            <div class="card-actions">
+                <paper-button class="primary">JOIN</paper-button>
+                <paper-button on-tap="onDetailsClick" raised class="secondary">DETAILS</paper-button>
+            </div>
+        </paper-card>
+    </template>
+</dom-module>

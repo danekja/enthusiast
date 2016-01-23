@@ -1,0 +1,26 @@
+<!--
+  ~ Copyright (c) 2015. Jakub Danek
+  ~
+  ~ This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
+  ~  To view a copy of this license, visit
+  ~   http://creativecommons.org/licenses/by-nc-sa/4.0/.
+  -->
+
+<link rel="import" href="../../../../packages/polymer_elements/iron_flex_layout.html"/>
+
+<dom-module id="event-list">
+    <template>
+
+        <div class="layout horizontal">
+
+            <template is="dom-repeat" items="[[events]]" as="ev">
+
+                <event-card event="[[ev]]" detailsevent="displayEventDetails"></event-card>
+
+            </template>
+
+        </div>
+
+
+    </template>
+</dom-module>
